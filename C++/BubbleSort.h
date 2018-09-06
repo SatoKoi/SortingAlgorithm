@@ -6,7 +6,7 @@
 using namespace std;
 
 template <typename T>
-void BubbleSort(T arr[], int n) {
+void bubbleSort(T arr[], int n) {
     for (int i = 0; i < n; ++i) {
         int len = n - i - 1;
         for (int j = 0; j < len; j++) {
@@ -14,7 +14,6 @@ void BubbleSort(T arr[], int n) {
                 swap(arr[j], arr[j+1]);
             }
         }
-        arr[len]
     }
 }
 #endif //ALGORITHM_BUBBLESORT_H

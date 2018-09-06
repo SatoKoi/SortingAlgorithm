@@ -7,13 +7,14 @@ using namespace std;
 
 template <typename T>
 void selectionSort(T arr[], int n) {
+    // 每次选出最小值的索引, 并将其与首位置进行交换
     for (int i = 0; i < n; ++i) {
-        int min = arr[i];
+        int min = i;
         for (int j = i+1; j < n; ++j) {
-            if (min < arr[j])
-                min = arr[j];
+            if (arr[min] > arr[j])
+                min = j;
         }
-        arr[i] = min;
+        swap(arr[min], arr[i]);
     }
 }
 #endif
