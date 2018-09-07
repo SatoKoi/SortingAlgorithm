@@ -2,6 +2,7 @@
 #define ALGORITHM_MERGESORT_H
 
 #include <iostream>
+#include "InsertionSort.h"
 #include "SortTestHelper.h"
 
 using namespace std;
@@ -48,7 +49,14 @@ void __merge(T arr[], int l, int mid, int r) {
 template <typename T>
 void __mergeSort(T arr[], int l, int r) {
     // 设置基线条件
+    /*
     if(l >= r) {
+        return;
+    }
+    */
+    // 此处在归并时, 若数组元素个数小于16则使用优化的插入排序进行排序
+    if (r - l <= 15) {
+        optimizedIS(arr, l, r);
         return;
     }
     int mid = (l + r) / 2;

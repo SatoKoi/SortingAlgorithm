@@ -28,4 +28,18 @@ void optimizedIS(T arr[], int n) {
         arr[j] = e;
     }
 }
+
+template <typename T>
+void optimizedIS(T arr[], int l, int r) {
+    for (int i = l; i <= r; ++i) {
+        T e = arr[i];
+        int j;
+        for (j = i; j > l && e < arr[j-1]; --j) {
+            // 若e > arr[j-1] 则arr[j-1]后移一位
+            arr[j] = arr[j-1];
+        }
+        // 选择合适的位置直接插入
+        arr[j] = e;
+    }
+}
 #endif //ALGORITHM_INSERTIONSORT_H

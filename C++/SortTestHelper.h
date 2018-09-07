@@ -54,12 +54,15 @@ namespace SortTestHelper{
      * 打印排序算法运行的时间
      * */
     template <typename T>
-    void testSort(const string &sortName, void (*sort)(T[], int), T arr[], int n) {
+    double testSort(const string &sortName, void (*sort)(T[], int), T arr[], int n) {
+        double lastingTime;
         clock_t startTime = clock(); // 时钟周期
         sort(arr, n);
         clock_t endTime = clock();
+        lastingTime = double(endTime - startTime) / CLOCKS_PER_SEC;
         assert(isSorted(arr, n));
-        cout << sortName << " : " << double(endTime - startTime) / CLOCKS_PER_SEC << " s" << endl;
+        cout << sortName << " : " << lastingTime << " s" << endl;
+        return lastingTime;
     }
 
     int* copyIntArray(int a[], int n) {
