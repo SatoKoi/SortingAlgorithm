@@ -160,8 +160,8 @@ int main() {
 //    TimeTest::commonTest(TimeTest::quickSortTest, count);
 //    TimeTest::commonTest(TimeTest::dbQuickSortTest, count);
 //    TimeTest::commonTest(TimeTest::quickSortThreeWaysTest, count);
-    TimeTest::commonTest(TimeTest::heapSortTest, count);
-    TimeTest::commonTest(TimeTest::optimizedHSTest, count);
-    TimeTest::commonTest(TimeTest::localHeapSortTest, count);
+//    TimeTest::commonTest(TimeTest::heapSortTest, count);
+//    TimeTest::commonTest(TimeTest::optimizedHSTest, count);
+//    TimeTest::commonTest(TimeTest::localHeapSortTest, count);
     return 0;
 }
